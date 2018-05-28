@@ -2,14 +2,11 @@ version: '3'
 
 services:
     db:
-        image: mysql
+        image: postgres
         volumes:
-            - "./.data/db:/var/lib/mysql"
+            - "./.data/db:/var/lib/postgresql"
         environment:
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-            MYSQL_DATABASE: ${MYSQL_DATABASE}
-            MYSQL_USER: ${MYSQL_USER}
-            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            POSTGRES_PASSWORD: postgres
     php:
         build:
             context: php7-fpm
